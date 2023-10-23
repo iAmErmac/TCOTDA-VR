@@ -1,0 +1,97 @@
+
+Model NapalmLauncher2
+{ 
+	Path "models/weapons/napalm"
+	Model 0 "napalm.md3"
+	Skin 0 "napalm1.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+	
+	NOINTERPOLATION
+
+	//Ready
+	FrameIndex RLXB A 0 0
+}
+
+Model NapalmLauncher2
+{ 
+	Path "models/weapons/napalm"
+	Model 0 "napalm.md3"
+	Skin 0 "napalm0.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+	
+	//Attack
+	FrameIndex RLXB B 0 1
+	FrameIndex RLXB C 0 2
+	FrameIndex RLXB D 0 3
+}
+
+//muzzle flash
+Model NapalmLauncher2
+{ 
+	Path "models/weapons/napalm"
+	Model 0 "napalm_mf.md3"
+	Skin 0 "napalm_mf1.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+	
+	FrameIndex MISF A 0 0
+	
+	Skin 0 "napalm_mf2.png"
+	
+	FrameIndex MISF B 0 0
+	
+	Skin 0 "napalm_mf3.png"
+	
+	FrameIndex MISF C 0 0
+	
+	Skin 0 "napalm_mf4.png"
+	
+	FrameIndex MISF D 0 0
+	
+	Skin 0 "napalm_mf5.png"
+	
+	FrameIndex MISF E 0 0
+	
+	Skin 0 "napalm_mf6.png"
+	
+	FrameIndex MISF F 0 0
+	
+	Skin 0 "napalm_mf7.png"
+	
+	FrameIndex MISF G 0 0
+}
+
+//with hand
+Model NapalmLauncher2
+{ 
+	Path "models/weapons/napalm"
+	Model 0 "napalm.md3"
+	Skin 0 "napalm1.png"
+	Model 1 "napalm_fist.md3"
+	Skin 1 "hand.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+	
+	NOINTERPOLATION
+
+	//Ready
+	FrameIndex RLXH A 0 0	FrameIndex RLXH A 1 0
+}
+
+Model NapalmLauncher2
+{ 
+	Path "models/weapons/napalm"
+	Model 0 "napalm.md3"
+	Skin 0 "napalm0.png"
+	Model 1 "napalm_fist.md3"
+	Skin 1 "hand.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+	
+	//Attack
+	FrameIndex RLXH B 0 1	FrameIndex RLXH B 1 1
+	FrameIndex RLXH C 0 2	FrameIndex RLXH C 1 2
+	FrameIndex RLXH D 0 3	FrameIndex RLXH D 1 3
+}

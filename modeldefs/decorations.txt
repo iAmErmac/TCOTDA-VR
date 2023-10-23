@@ -1,0 +1,13 @@
+
+Model BulletTracer
+{
+	Path "models"
+	Model 0 "tracer.md3"
+	Skin 0 "tracer1.png"
+	Scale 5.0 1.0 1.0
+	Offset 0.0 0.0 1.0
+	
+	PITCHFROMMOMENTUM
+	
+	FrameIndex PUFF A 0 0
+}

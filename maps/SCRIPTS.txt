@@ -1,0 +1,1449 @@
+#include "zcommon.acs"
+
+//INIT
+script 666 OPEN
+{
+	//Outside Color
+	sector_setcolor(1, 150, 171, 209);
+	sector_setcolor(19, 150, 171, 209);
+	sector_setcolor(20, 150, 171, 209);
+	sector_setcolor(21, 150, 171, 209);
+	sector_setcolor(22, 150, 171, 209);
+	sector_setcolor(23, 150, 171, 209);
+	sector_setcolor(28, 150, 171, 209);
+	
+	
+	
+
+
+	//Thing Kill
+	thing_destroy(34, 0);
+	thing_destroy(35, 0);
+	thing_destroy(38, 0);
+	thing_destroy(37, 0);
+	thing_destroy(50, 0);
+	
+	//Scroll Skybox
+	Scroll_Texture_Both(157, 10, 0, 0, 0);
+	TranslucentLine(157, 0, 0);	
+	
+	//Shootable
+	setlinespecial(165, 80, 165, 0, 0, 0, 0);
+	setlinespecial(166, 80, 166, 0, 0, 0, 0);
+	
+	//Line Railing
+	setlineblocking(181, BLOCK_RAILING);
+	
+	//Outside 2
+	sector_setcolor(27, 255, 130, 130);
+	sector_setcolor(40, 255, 130, 130);
+	sector_setfade(29, 70, 0, 0); //Skybox
+
+	//Fridge
+	sector_setcolor(8, 190, 230, 255);
+	sector_setfade (8,  30,  30,  30);
+	
+	
+	
+	//Electro
+	TranslucentLine(80, 255, 1);
+	
+	//Panning
+	sector_setfloorpanning(4, 32, 0, 0, 0);
+	sector_setceilingpanning(15, 0, 0, 32, 0);
+	
+	//Standard Scripts
+	setlinespecial(205, 80, 205, 0, 0, 0, 0);
+	setlinespecial(244, 80, 244, 0, 0, 0, 0);
+	
+	//Damage
+	sector_setdamage(28, 0, 0);
+	sector_setdamage(29, 255, 0);
+	
+	//Plane Reflection
+	Sector_SetPlaneReflection(19, 20, 0);
+	Sector_SetPlaneReflection(20, 20, 0);
+	Sector_SetPlaneReflection(22, 20, 0);
+	
+	//Floor Lower
+	Floor_LowerbyValue(19, 255, 8);
+	Floor_LowerbyValue(20, 255, 8);
+	Floor_LowerbyValue(22, 255, 8);
+	
+	delay(35);
+	
+	//Ocean Waggle
+	Floor_Waggle(20, 32, 32, 8, 0);
+	Floor_Waggle(19, 32, 32, 8, 0);
+	Floor_Waggle(22, 32, 32, 0, 0);    
+}
+
+//THAMUZ CLASSIC OR THAMUZ NEW
+int classic=0;
+
+script 231 (void) //CLASSIC - PATH OF DOOM
+{
+	classic=0;	
+}
+
+script 232 (void) //MODERN - ROAD OF BLOOD
+{
+	classic=1;
+}
+
+//MANSION OPEN / SETUP
+script 1 (void)
+{
+	thing_activate(2);
+}
+
+//CARNEVAL CRUSHER 1
+script 2 OPEN
+{
+	Ceiling_Waggle(9, 25*8, 28, 0, 0);
+	Floor_Waggle(9, 5*8, 25, 0, 0);
+}
+
+
+int noaccess=0;
+
+//SIREN SCRIPT
+script 3 (void)
+{
+	SetMusic("D_NONE", 0, 0);
+	AmbientSound("AMB30",255);
+	delay(10*35);
+	//acs_execute(333, 0, 0, 0, 0);
+	Light_Fade(10, 40, 140);
+	Thing_Deactivate(7);
+	AmbientSound("LIGHTOFF",80);
+	delay(35);
+	Thing_Deactivate(8);
+	AmbientSound("LIGHTOFF",80);
+	delay(35);
+	Thing_Deactivate(9);
+	AmbientSound("LIGHTOFF",80);
+	delay(35);
+	thing_activate(12);
+	delay(15*35);
+	thing_spawnnofog(10, 247, 0, 11);
+	thing_hate(11, 99, 4);
+	delay(24*35);
+	fadeto(0,0,0,1.0,5.0);
+	delay(2*35);
+	Thing_Deactivate(12);
+	thing_remove(11);
+	delay(10*35);
+	fadeto(0,0,0,0.0,3.0);
+	if (noaccess==1)
+     {
+           noaccess=0;
+           delay(20);
+           ambientsound("DSUHI", 90);
+     }
+    else
+     {
+           delay(1);
+     }
+	delay(10*35);
+	acs_execute(255,0,0,0,0);
+	Light_Fade(10, 200, 140);
+	Thing_Activate(7);
+	AmbientSound("LIGHTON",120);
+	delay(35);
+	Thing_Activate(8);
+	AmbientSound("LIGHTON",120);
+	delay(35);
+	Thing_Activate(9);
+	AmbientSound("LIGHTON",120);
+	
+	//Randomized Delay before Restart
+	delay(random(360*35, 540*35));
+	restart;
+}
+
+//Appear Darkness
+script 333 (void)
+{
+	translucentline(157, 255, 1);	
+}
+
+//SECURITY DOOR CLOSING
+int doorclosed=0;
+
+script 4 (void)
+{
+     if (doorclosed==0)
+     {
+           doorclosed=1;
+           Ceiling_LowerToFloor(11, 2);
+     }
+     else
+     {
+           doorclosed=0;
+           Ceiling_RaiseByValue(11, 10, 90);
+     }
+}
+
+//SECURITY DOOR CLOSING #2
+int doorclosed2=0;
+
+script 6 (void)
+{
+     if (doorclosed2==0)
+     {
+           doorclosed2=1;
+           Ceiling_LowerToFloor(14, 2);
+     }
+     else
+     {
+           doorclosed2=0;
+           Ceiling_RaiseByValue(14, 10, 90);
+     }
+}
+
+//SON MANSION
+script 5 (void)
+{
+	Floor_LowerInstant(2, 0, 16);
+	Floor_RaiseInstant(12, 0, 16);
+	setmusic("D_SHOCK1", 0, 0);
+	door_open(18, 20);
+}
+
+//BEFORE LIBRARY 1ST TIME SIRENE
+script 7 (void)
+{
+	SetLineSpecial(25, 80, 8, 0, 0, 0, 0);
+}
+
+//BEFORE LIBRARY SCRIPT RUN
+script 8 (void)
+{
+	SetLineSpecial(25, 80, 0, 0, 0, 0, 0);
+	ACS_Execute(3, 0, 0, 0, 0);
+}
+
+//TELEPHONE SCRIPT
+int telering=0;
+
+script 9 OPEN
+{
+	if (telering==3)
+     {
+        setlinespecial(30, 0, 0, 0, 0, 0, 0);
+        telering=0;
+        delay(random(120*25,240*35));
+     }
+     else
+     {
+        setlinespecial(30, 80, 10, 0, 0, 0, 0);
+   		thingsound(30, "AMB35", 128);
+   		telering++;
+   		delay(3*35);
+     }
+     restart;
+}
+
+script 10 (void)
+{
+	telering=3;
+	acs_terminate(9,0);
+	localambientsound("AMB36", 128);	
+}
+
+//SECURITY DOOR CLOSING #3
+int doorclosed3=0;
+
+script 11 (void)
+{
+     if (doorclosed3==0)
+     {
+           doorclosed3=1;
+           Ceiling_LowerToFloor(16, 2);
+     }
+     else
+     {
+           doorclosed3=0;
+           Ceiling_RaiseByValue(16, 10, 90);
+     }
+}
+
+//FOUND THE TRANSLATION BOOK
+script 12 (void)
+{
+	setlinespecial(205, 80, 206, 0, 0, 0, 0);
+	setlinespecial(40, 0, 0, 0, 0, 0, 0);
+	Ceiling_LowerInstant(17, 0, 20);
+	thing_deactivate(40);
+	SpawnSpot("TransBook", 14, 0, 0);
+}
+
+//TRANSLATION BOOK GETS KNOWN
+int transbookact=0;
+
+script 13 (void)
+{
+	if (transbookact==0)
+	{
+		light_fade(17, 200, 20);
+		setlinespecial(40, 80, 12, 0, 0, 0, 0);
+		thing_activate(40);
+		transbookact=1;
+	}
+	else
+	{
+		delay(1);
+	}
+}
+
+//BILLARD ROOM SPIDER
+script 14 (void)
+{
+	thing_activate(17);
+	thing_move(18, 17);
+	spawnspot("LargeSpider", 59, 18, 0);
+	SetMusic("D_SHOCK2", 0, 0);
+	while(thingcount(0,18)>0)
+		{
+   		delay(35);
+		}
+	acs_execute(255, 0, 0, 0, 0);
+}
+
+//SCIENCE LAB
+script 15 (void)
+{
+	setmusic("D_SHOCK2", 0, 0);
+	translucentline(80, 0, 0);
+	thing_deactivate(22);
+	thing_remove(24);
+	thing_activate(21);
+	thing_activate(23);	
+	setlinetexture(81, SIDE_FRONT, TEXTURE_MIDDLE, "BHEART05");
+	delay(20);
+	thing_activate(23);	
+	delaY(25);
+	thing_activate(23);	
+	delay(140);
+	spawnspot("KDiZDNightmare", 44, 0, 0);
+}
+
+int skullcollected=0;
+int watchcollected=0;
+int diamncollected=0;
+
+int skullplaced=0;
+int watchplaced=0;
+int diamnplaced=0;
+
+
+//SKULL COLLECTED
+script 16 (void)
+{
+	skullcollected=1;
+}
+
+//WATCH COLLECTED
+script 17 (void)
+{
+    floor_lowerbyvalue(40, 8, 16);
+	watchcollected=1;
+	acs_execute(41, 0, 0, 0, 0);
+	door_open(39, 20);
+}
+
+//DIAMOND COLLECTED
+script 18 (void)
+{
+	diamncollected=1;
+}
+
+//SKULL PLACE
+script 19 (void)
+{
+if (skullcollected==0)
+     {
+        Print(s:"You need thamuz skull to use this object");
+     }
+     else
+     {
+        spawnspot("Schaedel", 111, 0, 0);
+        thing_activate(101);
+        skullplaced=1;
+     }
+}
+
+//WATCH PLACE
+script 20 (void)
+{
+if (watchcollected==0)
+     {
+        Print(s:"You need gaul's hourglass of dimensions to use this object");
+     }
+     else
+     {
+        spawnspot("Sanduhr", 112, 0, 0);
+        thing_activate(102);
+        watchplaced=1;
+     }
+}
+
+//DIAMOND PLACE
+script 21 (void)
+{
+if (diamncollected==0)
+     {
+        Print(s:"You need a flawless diamond to use this object");
+     }
+     else
+     {
+        spawnspot("Diamant", 113, 0, 0);
+        thing_activate(103);
+        diamnplaced=1;
+     }
+}
+
+//FINAL THAMUZ SCRIPT
+script 22 OPEN
+{
+	if (diamnplaced==1 && watchplaced==1 && skullplaced==1)
+	{
+		spawnspot("TeleportFogHuge", 42, 0, 0);
+		acs_terminate(3,0);
+		if(classic == 0)
+		{		
+		thing_move(43, 42);
+		thing_hate(43, 999, 4);
+		}
+		else
+		{
+		thing_move(212, 42);
+		thing_hate(212, 999, 4);
+		}
+		setmusic("D_BOSS", 0, 0);
+	}
+	else
+	{
+		delay(5);
+		restart;
+	}
+}
+
+//PUSH SCRIPT
+int barrelfit=1;
+
+//Insert
+script 25 (void)
+{
+if(ActivatorTID()==33 || ActivatorTID()==53 || ActivatorTID()==54)
+	{
+	barrelfit+=1;
+	}
+}
+
+//Remove
+script 24 (void)
+{
+if(ActivatorTID()==33 || ActivatorTID()==53 || ActivatorTID()==54)
+	{
+	barrelfit-=1;
+	}
+}
+
+//Check if all barrels are set
+script 26 OPEN
+{
+	if (barrelfit==3)
+	{
+		floor_lowertonearest(28, 4);
+		delay(35);
+		floor_lowertonearest(30, 4);
+		Radius_Quake(2, 70, 0, 8, 32);
+		
+	}
+	else
+	{
+		delay(5);
+		restart;
+	}
+}
+
+//Raise first Zombie
+script 34 (void)
+{
+	thing_raise(34);
+}
+
+//Raise soulis
+script 35 (void)
+{
+	thing_raise(35);
+}
+
+//Spawn Wraiths
+script 36 (void)
+{
+	spawnspot("DEWraith", 36, 0, 192);
+}
+
+//Raise Zombies Puzzle
+script 38 (void)
+{
+	delay(70);
+	thing_raise(38);
+	setmusic("D_SHOCK1", 0, 0);
+	while(thingcount(0,38)>0)
+		{
+   		delay(35);
+		}
+	acs_execute(255, 0, 0, 0, 0);
+}
+
+//Raise soulis
+int dreisiebendone=0;
+
+script 37 (void)
+{
+  if (dreisiebendone==0)
+    {
+	door_open(31, 20);
+	thing_activate(52);
+	thing_raise(37);
+	setlinespecial(92, 80, 39, 0, 0, 0, 0);
+	dreisiebendone=1;
+	}
+  else
+    {
+    delay(1);
+    }
+}
+
+//Music Change Hopital
+script 39 (void) 
+{
+	setmusic("D_SHOCK1", 0, 0);
+	while(thingcount(0,52)>0)
+		{
+   		delay(35);
+		}
+	acs_execute(255, 0, 0, 0, 0);
+}
+
+//Shadow after Mansion
+script 40 (void)
+{
+	spawnspot("Shadow", 40, 0, 0);
+}
+
+//Incarnate
+script 41 (void)
+{
+	setmusic("D_TENSE", 0, 0);
+	thing_activate(41);
+	setlinetexture(9, SIDE_FRONT, TEXTURE_MIDDLE, "BMIDG12");
+	setlinetexture(9, SIDE_BACK, TEXTURE_MIDDLE, "BMIDG12");
+	setlineblocking(9, BLOCK_NOTHING);
+}
+
+//First Alarm
+script 42 (void)
+{
+	thing_spawn(46, 219, 0, 99);
+	thing_hate(99, 45, 6);
+}
+
+//Zombie Brain Storage 1
+script 43 (void)
+{
+	thing_raise(50);
+}
+
+//Zombie Brain Storage 2
+script 44 (void)
+{
+	thing_hate(49, 51, 3);
+	thing_hate(51, 49, 3);
+}
+
+//Thamuz End Script
+script 45 (void)
+{
+	delay(210);
+	fadeto(0,0,0,1.0,5.0);
+	delay(7*35);
+	acs_execute(90, 0, 0, 0, 0);
+}
+
+//Guillotine
+script 46 (void)
+{
+	damagething(255);
+	ceiling_lowerbyvalue(32, 255, 96);
+	delay(40);
+	ceiling_raisebyvalue(32, 30, 96);
+}
+
+//Diamond Attack
+script 47 (void)
+{
+	spawnspot("ShotgunCultist", 55, 0, 128);
+	spawnspot("ChaingunCultist", 56, 0, 128);
+}
+
+//Hell Hound Music
+script 48 (void)
+{
+    thing_remove(58);
+    setmusic("D_SHOCK2", 0, 0);
+	while(thingcount(0,57)>0)
+		{
+   		delay(35);
+		}
+	acs_execute(255, 0, 0, 0, 0);
+}
+
+//Spider Exit
+script 49 (void)
+{
+	setlinetexture(67, SIDE_FRONT, TEXTURE_MIDDLE, "BSCHACH3");
+	setlinetexture(67, SIDE_BACK, TEXTURE_MIDDLE, "BSCHACH3");
+	setlineblocking(67, BLOCK_NOTHING);
+}
+
+//Church Normalize & Apprentice
+script 50 (void)
+{
+	thing_activate(60);
+	delay(20);
+	setlinespecial(244, 0, 0, 0, 0, 0, 0);
+	ChangeFloor(35, "ABRWN04");
+	setmusic("D_SHOCK1", 0, 0);
+	thing_move(62, 61);
+	delay(20);
+	thing_deactivate(60);
+}
+
+//Action before first time Bunker
+script 51 (void)
+{
+	if(noaccess==1)
+	{
+		acs_terminate(53, 0);
+		acs_execute(52, 0, 0, 0, 0);
+	}
+	else
+	{
+	
+	}
+}
+
+//Teleport and Stuff
+script 52 (void)
+{
+	thing_remove(63);
+	ambientsound("DSXHIT", 127);
+	delay(10);
+	fadeto(0,0,0,1.0,0.1);
+	delay(15);
+	doorclosed=1;
+    Ceiling_LowerToFloor(11, 2);
+    TeleportOther(999, 200, 0);
+    TeleportOther(1000, 201, 0);
+    TeleportOther(1001, 202, 0);
+    TeleportOther(1002, 203, 0);
+    TeleportOther(1003, 204, 0);
+    TeleportOther(1004, 205, 0);
+    TeleportOther(1005, 206, 0);
+    TeleportOther(1006, 207, 0);
+    //teleport(64);
+    //thing_move(999, 64);
+    thing_spawn(65, 216, 192, 133);
+    thing_activate(69);
+    setlinespecial(76, 80, 76, 0, 0, 0, 0);
+}
+
+//Countdown
+script 53 (void)
+{
+	noaccess=1;
+	delay(25*35);
+	acs_execute(52,0,0,0,0);
+}
+
+//Script Killer & Zombie
+script 76 (void)
+{
+	thingsound(76, "SCRFALL", 90);
+	thing_destroy(133, 0);
+	delay(20);
+	spawnspot("ZombieBlood", 77, 78, 0);
+	thing_hate(78, 99, 4); 
+	thing_remove(69);
+}
+
+
+//SECURITY DOOR CLOSING #2
+int doorclosed9=0;
+
+script 77 (void)
+{
+     if (doorclosed9==0)
+     {
+           doorclosed9=1;
+           Ceiling_LowerToFloor(37, 2);
+     }
+     else
+     {
+           doorclosed9=0;
+           Ceiling_RaiseByValue(37, 10, 90);
+     }
+}
+
+
+
+
+//Shootable 
+script 165 (void)
+{
+	setlinespecial(165, 0, 0, 0, 0, 0, 0);
+	setlineblocking(165, BLOCK_NOTHING);
+	setlinetexture(165, SIDE_FRONT, TEXTURE_MIDDLE, "BSCHACH3");
+	setlinetexture(165, SIDE_BACK, TEXTURE_MIDDLE, "BSCHACH3");
+}
+
+script 166 (void)
+{
+	setlinespecial(166, 0, 0, 0, 0, 0, 0);
+	setlineblocking(166, BLOCK_NOTHING);
+	setlinetexture(166, SIDE_FRONT, TEXTURE_MIDDLE, "BSCHACH3");
+	setlinetexture(166, SIDE_BACK, TEXTURE_MIDDLE, "BSCHACH3");
+}
+
+//Shitz0r
+script 78 (void)
+{
+	acs_execute(3, 0, 0, 0, 0);
+	acs_execute(53, 0, 0, 0, 0);
+	acs_execute(42, 0, 0, 0, 0);
+}
+
+
+//LETTERS & TEXTS
+int letterlooked1=0;
+int letterlooked2=0;
+int letterlooked3=0;
+int letterlooked4=0;
+int letterlooked5=0;
+int letterlooked6=0;
+int letterlooked7=0;
+int letterlooked8=0;
+int letterlooked9=0;
+int letterlooked10=0;
+int letterlooked11=0;
+int letterlooked12=0;
+int letterlooked13=0;
+int letterlooked14=0;
+int letterlooked15=0;
+int letterlooked16=0;
+int letterlooked17=0;
+
+script 201 (void) 
+//LETTER #1
+{
+	/*if (letterlooked1==0)
+     {
+        letterlooked1=1;
+        thing_stop(0);
+        SetHudSize(640, 480, 0);
+        Setfont("LETTER_1");
+		Hudmessage(s:"a"; 
+		HUDMSG_FADEINOUT, 1, CR_WHITE, 320.0, 240.0, 500.0, 1.0, 1.0);
+		Setfont("smallfont");
+		SetPlayerProperty(0, 1, PROP_TOTALLYFROZEN);
+     }
+     else
+     {
+        letterlooked1=0;
+        SetHudSize(640, 480, 0);
+        Setfont("LETTER_1");
+		Hudmessage(s:"a"; 
+		HUDMSG_FADEINOUT, 1, CR_WHITE, 320.0, 240.0, 0.0, 0.0, 1.0);
+		Setfont("smallfont");
+		SetPlayerProperty(0, 0, PROP_TOTALLYFROZEN);
+     }*/
+	GiveInventory("viewletter", 1);
+}
+
+
+script 202 (void) 
+//LETTER #2
+{
+	/*if (letterlooked2==0)
+     {
+        letterlooked2=1;
+        thing_stop(0);
+        SetHudSize(640, 480, 0);
+        Setfont("LETTER_2");
+		Hudmessage(s:"a"; 
+		HUDMSG_FADEINOUT, 1, CR_WHITE, 320.0, 240.0, 500.0, 1.0, 1.0);
+		Setfont("smallfont");
+		SetPlayerProperty(0, 1, PROP_TOTALLYFROZEN);
+     }
+     else
+     {
+        letterlooked2=0;
+        SetHudSize(640, 480, 0);
+        Setfont("LETTER_2");
+		Hudmessage(s:"a"; 
+		HUDMSG_FADEINOUT, 1, CR_WHITE, 320.0, 240.0, 0.0, 0.0, 1.0);
+		Setfont("smallfont");
+		SetPlayerProperty(0, 0, PROP_TOTALLYFROZEN);
+     }*/
+	GiveInventory("viewletter", 2);
+}
+
+script 203 (void) 
+//LETTER #3
+{
+	/*if (letterlooked3==0)
+     {
+        letterlooked3=1;
+        thing_stop(0);
+        SetHudSize(640, 480, 0);
+        Setfont("LETTER_3");
+		Hudmessage(s:"a"; 
+		HUDMSG_FADEINOUT, 1, CR_WHITE, 320.0, 240.0, 500.0, 1.0, 1.0);
+		Setfont("smallfont");
+		SetPlayerProperty(0, 1, PROP_TOTALLYFROZEN);
+     }
+     else
+     {
+        letterlooked3=0;
+        SetHudSize(640, 480, 0);
+        Setfont("LETTER_3");
+		Hudmessage(s:"a"; 
+		HUDMSG_FADEINOUT, 1, CR_WHITE, 320.0, 240.0, 0.0, 0.0, 1.0);
+		Setfont("smallfont");
+		SetPlayerProperty(0, 0, PROP_TOTALLYFROZEN);
+     }*/
+	GiveInventory("viewletter", 3);
+}
+
+script 204 (void) 
+//LETTER #4
+{
+	/*if (letterlooked4==0)
+     {
+        letterlooked4=1;
+        thing_stop(0);
+        SetHudSize(640, 480, 0);
+        Setfont("LETTER_4");
+		Hudmessage(s:"a"; 
+		HUDMSG_FADEINOUT, 1, CR_WHITE, 320.0, 240.0, 500.0, 1.0, 1.0);
+		Setfont("smallfont");
+		SetPlayerProperty(0, 1, PROP_TOTALLYFROZEN);
+     }
+     else
+     {
+        letterlooked4=0;
+        SetHudSize(640, 480, 0);
+        Setfont("LETTER_4");
+		Hudmessage(s:"a"; 
+		HUDMSG_FADEINOUT, 1, CR_WHITE, 320.0, 240.0, 0.0, 0.0, 1.0);
+		Setfont("smallfont");
+		SetPlayerProperty(0, 0, PROP_TOTALLYFROZEN);
+     }*/
+	GiveInventory("viewletter", 4);
+}
+
+script 205 (void) 
+//LETTER #5
+{
+	/*if (letterlooked5==0)
+     {
+        letterlooked5=1;
+        thing_stop(0);
+        SetHudSize(640, 480, 0);
+        Setfont("LETTER_5");
+		Hudmessage(s:"a"; 
+		HUDMSG_FADEINOUT, 1, CR_WHITE, 320.0, 240.0, 500.0, 1.0, 1.0);
+		Setfont("smallfont");
+		SetPlayerProperty(0, 1, PROP_TOTALLYFROZEN);
+     }
+     else
+     {
+        letterlooked5=0;
+        SetHudSize(640, 480, 0);
+        Setfont("LETTER_5");
+		Hudmessage(s:"a"; 
+		HUDMSG_FADEINOUT, 1, CR_WHITE, 320.0, 240.0, 0.0, 0.0, 1.0);
+		Setfont("smallfont");
+		SetPlayerProperty(0, 0, PROP_TOTALLYFROZEN);
+     }*/
+	GiveInventory("viewletter", 5);
+}
+
+script 206 (void) 
+//LETTER #6
+{
+acs_execute(37, 0, 0, 0, 0);
+thing_activate(31);
+	/*if (letterlooked6==0)
+     {
+        letterlooked6=1;
+        thing_stop(0);
+        SetHudSize(640, 480, 0);
+        Setfont("LETTER_6");
+		Hudmessage(s:"a"; 
+		HUDMSG_FADEINOUT, 1, CR_WHITE, 320.0, 240.0, 500.0, 1.0, 1.0);
+		etfont("smallfont");
+		SetPlayerProperty(0, 1, PROP_TOTALLYFROZEN);
+     }
+     else
+     {
+        letterlooked6=0;
+        SetHudSize(640, 480, 0);
+        Setfont("LETTER_6");
+		Hudmessage(s:"a"; 
+		HUDMSG_FADEINOUT, 1, CR_WHITE, 320.0, 240.0, 0.0, 0.0, 1.0);
+		Setfont("smallfont");
+		SetPlayerProperty(0, 0, PROP_TOTALLYFROZEN);
+     }*/
+	GiveInventory("viewletter", 6);
+}
+
+script 207 (void) 
+//LETTER #7
+{
+thing_activate(15);
+floor_raisetonearest(23, 255);
+	/*if (letterlooked7==0)
+     {
+        letterlooked7=1;
+        thing_stop(0);
+        SetHudSize(640, 480, 0);
+        Setfont("LETTER_7");
+		Hudmessage(s:"a"; 
+		HUDMSG_FADEINOUT, 1, CR_WHITE, 320.0, 240.0, 500.0, 1.0, 1.0);
+		Setfont("smallfont");
+		SetPlayerProperty(0, 1, PROP_TOTALLYFROZEN);
+     }
+     else
+     {
+        letterlooked7=0;
+        SetHudSize(640, 480, 0);
+        Setfont("LETTER_7");
+		Hudmessage(s:"a"; 
+		HUDMSG_FADEINOUT, 1, CR_WHITE, 320.0, 240.0, 0.0, 0.0, 1.0);
+		Setfont("smallfont");
+		SetPlayerProperty(0, 0, PROP_TOTALLYFROZEN);
+     }*/
+	GiveInventory("viewletter", 7);
+}
+
+script 208 (void) 
+//LETTER #8
+{
+thing_activate(24);
+thing_activate(25);
+setlinespecial(82, 20, 0, 20, 128, 0, 0);
+	/*if (letterlooked8==0)
+     {
+        letterlooked8=1;
+        thing_stop(0);
+        SetHudSize(640, 480, 0);
+        Setfont("LETTER_8");
+		Hudmessage(s:"a"; 
+		HUDMSG_FADEINOUT, 1, CR_WHITE, 320.0, 240.0, 500.0, 1.0, 1.0);
+		Setfont("smallfont");
+		SetPlayerProperty(0, 1, PROP_TOTALLYFROZEN);
+     }
+     else
+     {
+        letterlooked8=0;
+        SetHudSize(640, 480, 0);
+        Setfont("LETTER_8");
+		Hudmessage(s:"a"; 
+		HUDMSG_FADEINOUT, 1, CR_WHITE, 320.0, 240.0, 0.0, 0.0, 1.0);
+		Setfont("smallfont");
+		SetPlayerProperty(0, 0, PROP_TOTALLYFROZEN);
+     }*/
+	GiveInventory("viewletter", 8);
+}
+
+script 209 (void) 
+//LETTER #9
+{
+	/*if (letterlooked9==0)
+     {
+        letterlooked9=1;
+        thing_stop(0);
+        SetHudSize(640, 480, 0);
+        Setfont("LETTER_9");
+		Hudmessage(s:"a"; 
+		HUDMSG_FADEINOUT, 1, CR_WHITE, 320.0, 240.0, 500.0, 1.0, 1.0);
+		Setfont("smallfont");
+		SetPlayerProperty(0, 1, PROP_TOTALLYFROZEN);
+     }
+     else
+     {
+        letterlooked9=0;
+        SetHudSize(640, 480, 0);
+        Setfont("LETTER_9");
+		Hudmessage(s:"a"; 
+		HUDMSG_FADEINOUT, 1, CR_WHITE, 320.0, 240.0, 0.0, 0.0, 1.0);
+		Setfont("smallfont");
+		SetPlayerProperty(0, 0, PROP_TOTALLYFROZEN);
+     }*/
+	GiveInventory("viewletter", 9);
+}
+
+script 210 (void) 
+//LETTER #10
+{
+	/*if (letterlooked10==0)
+     {
+        letterlooked10=1;
+        thing_stop(0);
+        SetHudSize(640, 480, 0);
+        Setfont("LETTER10");
+		Hudmessage(s:"a"; 
+		HUDMSG_FADEINOUT, 1, CR_WHITE, 320.0, 240.0, 500.0, 1.0, 1.0);
+		Setfont("smallfont");
+		SetPlayerProperty(0, 1, PROP_TOTALLYFROZEN);
+     }
+     else
+     {
+        letterlooked10=0;
+        SetHudSize(640, 480, 0);
+        Setfont("LETTER10");
+		Hudmessage(s:"a"; 
+		HUDMSG_FADEINOUT, 1, CR_WHITE, 320.0, 240.0, 0.0, 0.0, 1.0);
+		Setfont("smallfont");
+		SetPlayerProperty(0, 0, PROP_TOTALLYFROZEN);
+     }*/
+	GiveInventory("viewletter", 10);
+}
+
+script 211 (void) 
+//LETTER #11
+{
+	/*if (letterlooked11==0)
+     {
+        letterlooked11=1;
+        thing_stop(0);
+        SetHudSize(640, 480, 0);
+        Setfont("LETTER11");
+		Hudmessage(s:"a"; 
+		HUDMSG_FADEINOUT, 1, CR_WHITE, 320.0, 240.0, 500.0, 1.0, 1.0);
+		Setfont("smallfont");
+		SetPlayerProperty(0, 1, PROP_TOTALLYFROZEN);
+     }
+     else
+     {
+        letterlooked11=0;
+        SetHudSize(640, 480, 0);
+        Setfont("LETTER11");
+		Hudmessage(s:"a"; 
+		HUDMSG_FADEINOUT, 1, CR_WHITE, 320.0, 240.0, 0.0, 0.0, 1.0);
+		Setfont("smallfont");
+		SetPlayerProperty(0, 0, PROP_TOTALLYFROZEN);
+     }*/
+	GiveInventory("viewletter", 11);
+}
+
+script 212 (void) 
+//LETTER #12
+{
+	/*if (letterlooked12==0)
+     {
+        letterlooked12=1;
+        thing_stop(0);
+        SetHudSize(640, 480, 0);
+        Setfont("LETTER12");
+		Hudmessage(s:"a"; 
+		HUDMSG_FADEINOUT, 1, CR_WHITE, 320.0, 240.0, 500.0, 1.0, 1.0);
+		Setfont("smallfont");
+		SetPlayerProperty(0, 1, PROP_TOTALLYFROZEN);
+     }
+     else
+     {
+        letterlooked12=0;
+        SetHudSize(640, 480, 0);
+        Setfont("LETTER12");
+		Hudmessage(s:"a"; 
+		HUDMSG_FADEINOUT, 1, CR_WHITE, 320.0, 240.0, 0.0, 0.0, 1.0);
+		Setfont("smallfont");
+		SetPlayerProperty(0, 0, PROP_TOTALLYFROZEN);
+     }*/
+	GiveInventory("viewletter", 12);
+}
+
+script 213 (void) 
+//LETTER #13
+{
+acs_execute(13, 0, 0, 0, 0);
+	/*if (letterlooked13==0)
+     {
+        letterlooked13=1;
+        thing_stop(0);
+        SetHudSize(640, 480, 0);
+        Setfont("LETTER13");
+		Hudmessage(s:"a"; 
+		HUDMSG_FADEINOUT, 1, CR_WHITE, 320.0, 240.0, 500.0, 1.0, 1.0);
+		Setfont("smallfont");
+		SetPlayerProperty(0, 1, PROP_TOTALLYFROZEN);
+     }
+     else
+     {
+        letterlooked13=0;
+        SetHudSize(640, 480, 0);
+        Setfont("LETTER13");
+		Hudmessage(s:"a"; 
+		HUDMSG_FADEINOUT, 1, CR_WHITE, 320.0, 240.0, 0.0, 0.0, 1.0);
+		Setfont("smallfont");
+		SetPlayerProperty(0, 0, PROP_TOTALLYFROZEN);
+     }*/
+	GiveInventory("viewletter", 13);
+}
+
+script 214 (void) 
+//LETTER #14
+{
+	/*if (letterlooked14==0)
+     {
+        letterlooked14=1;
+        thing_stop(0);
+        SetHudSize(640, 480, 0);
+        Setfont("LETTER14");
+		Hudmessage(s:"a"; 
+		HUDMSG_FADEINOUT, 1, CR_WHITE, 320.0, 240.0, 500.0, 1.0, 1.0);
+		Setfont("smallfont");
+		SetPlayerProperty(0, 1, PROP_TOTALLYFROZEN);
+     }
+     else
+     {
+        letterlooked14=0;
+        SetHudSize(640, 480, 0);
+        Setfont("LETTER14");
+		Hudmessage(s:"a"; 
+		HUDMSG_FADEINOUT, 1, CR_WHITE, 320.0, 240.0, 0.0, 0.0, 1.0);
+		Setfont("smallfont");
+		SetPlayerProperty(0, 0, PROP_TOTALLYFROZEN);
+     }*/
+	GiveInventory("viewletter", 14);
+}
+
+script 215 (void) 
+//LETTER #15
+{
+	/*if (letterlooked15==0)
+     {
+        letterlooked15=1;
+        thing_stop(0);
+        SetHudSize(640, 480, 0);
+        Setfont("LETTER15");
+		Hudmessage(s:"a"; 
+		HUDMSG_FADEINOUT, 1, CR_WHITE, 320.0, 240.0, 500.0, 1.0, 1.0);
+		Setfont("smallfont");
+		SetPlayerProperty(0, 1, PROP_TOTALLYFROZEN);
+     }
+     else
+     {
+        letterlooked15=0;
+        SetHudSize(640, 480, 0);
+        Setfont("LETTER15");
+		Hudmessage(s:"a"; 
+		HUDMSG_FADEINOUT, 1, CR_WHITE, 320.0, 240.0, 0.0, 0.0, 1.0);
+		Setfont("smallfont");
+		SetPlayerProperty(0, 0, PROP_TOTALLYFROZEN);
+     }*/
+	GiveInventory("viewletter", 15);
+}
+
+script 555 (void)
+//LETTER #16
+{
+if (letterlooked16==0)
+     {
+        delay(1);
+     }
+     else
+     {
+        letterlooked16=0;
+        //SetHudSize(640, 480, 0);
+		//Hudmessage(s:" "; 
+		//HUDMSG_FADEINOUT, 1, CR_WHITE, 320.0, 240.0, 0.0, 0.0, 1.0);
+		//Setfont("smallfont");
+		//SetPlayerProperty(0, 0, PROP_TOTALLYFROZEN);
+     }
+}
+
+script 216 (void) 
+//LETTER #16
+{
+	/*if (letterlooked17==0)
+     {
+        letterlooked17=1;
+        thing_stop(0);
+        SetHudSize(640, 480, 0);
+        Setfont("LETTER16");
+		Hudmessage(s:"a"; 
+		HUDMSG_FADEINOUT, 1, CR_WHITE, 320.0, 240.0, 500.0, 1.0, 1.0);
+		Setfont("smallfont");
+		SetPlayerProperty(0, 1, PROP_TOTALLYFROZEN);
+     }
+     else
+     {
+        letterlooked17=0;
+        SetHudSize(640, 480, 0);
+        Setfont("LETTER16");
+		Hudmessage(s:"a"; 
+		HUDMSG_FADEINOUT, 1, CR_WHITE, 320.0, 240.0, 0.0, 0.0, 1.0);
+		Setfont("smallfont");
+		SetPlayerProperty(0, 0, PROP_TOTALLYFROZEN);
+     }*/
+	GiveInventory("viewletter", 16);
+}
+
+
+
+
+
+//KILL ACTIVATOR
+script 244 (void)
+{
+	damagething(999); 
+}
+
+//START MUSIC
+script 254 (void)
+{
+	setmusic("D_ING02", 0, 0);
+}
+
+//RANDOM MUSIC
+int musicrandomizer;
+
+script 255 (void)
+{
+	musicrandomizer=random(1,3);
+	if(musicrandomizer==1)
+	{
+		setmusic("D_DM2TTL", 0, 0);
+	}
+	if(musicrandomizer==2)
+	{
+		setmusic("D_ING02", 0, 0);
+	}
+	if(musicrandomizer==3)
+	{
+		setmusic("D_TENSE", 0, 0);
+	}
+}
+
+//RANDOM MUSIC
+int musicrandomizer_net;
+
+script 253 (void)
+{
+	musicrandomizer_net=random(1,3);
+	if(musicrandomizer_net==1)
+	{
+		LocalSetMusic("D_DM2TTL", 0, 0);
+	}
+	if(musicrandomizer_net==2)
+	{
+		localsetmusic("D_ING02", 0, 0);
+	}
+	if(musicrandomizer_net==3)
+	{
+		localsetmusic("D_TENSE", 0, 0);
+	}
+}
+
+
+
+
+//GIVE PLAYER THING ID 999
+script 300 ENTER
+{
+    Thing_ChangeTID(0,999+PlayerNumber()); 
+    
+}
+
+script 301 DEATH
+{
+    //Thing_ChangeTID(0, 0);
+}
+
+script 302 RESPAWN
+{
+    Thing_ChangeTID(0,999+PlayerNumber()); 
+    ACS_Execute(253, 0, 0, 0, 0);
+}
+
+
+
+
+
+script 556 ENTER
+{
+	if(GetCVar("vid_renderer") == 1)
+	{
+    delay(1);
+	}	
+	else
+	{
+    damagething(9999);
+    print(s:"To play this, activate the hardware renderer!");
+	} 
+}
+
+//Weapon Script
+str Weps[6] = {
+   "NewFist",
+   "Pitchfork",
+   "PistolBlood",
+   "Sawedoff",
+   "Thompson",
+   "NapalmLauncher"
+};
+
+str Ammo1[6] = {
+   "NewFist",
+   "Pitchfork",
+   "AClip",
+   "AutoShotgunClip",
+   "AClip",
+   "NapalmAmmo"
+};
+
+str Ammo2[6] = {
+   "NewFist",
+   "Pitchfork",
+   "AClip",
+   "Shell",
+   "AClip",
+   "NapalmAmmo"
+};
+
+script 99 (int oldwep) {
+   // Changed index to start at 5 and go to 0 instead of 6 to 1.
+	for (int i=5; i>=0; i--) {
+      if (oldwep == i) continue;
+      if (!CheckInventory(Weps[i])) continue;
+      if (!CheckInventory(Ammo1[i]) && !CheckInventory(Ammo2[i])) continue;
+
+      SetWeapon(Weps[i]);
+      terminate;
+   }
+
+   // Fail-safe in case a weapon couldn't be found
+   SetWeapon("NewFist");
+}
+
+script 999 (int tid) {
+   int x, y, oldx, oldy;
+
+   x = GetActorX(tid);
+   y = GetActorY(tid);
+
+   while (1) {
+      oldx = x;
+      oldy = y;
+
+      x = GetActorX(tid);
+      y = GetActorY(tid);
+
+      if (x != oldx || y != oldy) { // Actor moved
+         Thingsound(tid, "DORMOV", 127);
+      }
+
+      delay(17);
+   }
+}
+
+script 110 (void)
+{
+	acs_executealways(999,0,33,0,0);
+	acs_executealways(999,0,53,0,0);
+	acs_executealways(999,0,54,0,0);
+    //delay(1);
+	//restart;
+}
+
+
+//ENDING SEQUENCE
+script 90 (void)
+{
+	
+	setmusic("D_NONE");
+	
+	//Re/DeActivate
+	thing_activate(47);
+	thing_deactivate(171);
+	thing_deactivate(31);
+	thing_deactivate(15);
+	
+	//Sequence
+	thing_activate(129);
+	changecamera(129, 1, 0);
+	SetPlayerProperty(0, 1, PROP_TOTALLYFROZEN);
+	SetHudSize(640, 480, 0);
+        Setfont("X_BORDER");
+		Hudmessage(s:"a"; 
+		HUDMSG_FADEINOUT, 10, CR_WHITE, 320.0, 240.0, 9000.0, 0.0, 0.0);
+		Setfont("smallfont");
+		fadeto(0, 0, 0, 0.0, 3.0);
+	delay(3*35);
+	    Setfont("X_ENDL");
+		Hudmessage(s:"a"; 
+		HUDMSG_FADEINOUT, 9, CR_WHITE, 320.0, 240.0, 47.0, 2.0, 2.0);
+		Setfont("smallfont");
+	setmusic("D_CREDIT");		
+	delay(61*35);
+	acs_execute(551, 0, 0, 0, 0);
+	delay(80*35);
+		Setfont("X_LOGO");
+		Hudmessage(s:"a"; 
+		HUDMSG_FADEINOUT, 9, CR_WHITE, 520.0, 390.0, 6.0, 3.0, 3.0);
+		Setfont("smallfont");
+    delay(14*35);
+    setmusic("D_NONE", 0, 0);		
+	fadeto(0, 0, 0, 1.0, 3.0);
+	delay(6*35);
+	ambientsound("AMB30", 128);
+	
+	
+	
+	
+}
+
+script 551 (void)
+{
+int y;
+    sethudsize(640, 480, 1);
+    for(y = 1550.0; y <= 4200.0; y -= 1.0)
+    {
+       setfont("X_CREDIT");
+       hudmessagebold(s:"A"; 0, 2, -1, 320.0, y, 0);
+       delay(183/100);
+       if(y == 0.1) delay(35);  // start delay
+    }
+}
+
+script 156 (void)
+{
+	Door_LockedRaise(41, 20, 0, 7);
+	delay(35);
+	if(CheckInventory("SafeKey")==1)
+	{
+
+	}
+	else
+	{
+
+	}
+}

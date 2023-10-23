@@ -1,0 +1,60 @@
+
+Class NapalmLauncher2 : WeaponZ //21073
+{
+	Default
+	{
+	//spawnid 29
+	radius 20;
+	height 16;
+	inventory.pickupmessage "You got the napalm launcher!";
+	weapon.selectionorder 250;
+	weapon.kickback 100;
+	weapon.ammotype "NapalmAmmo";
+	weapon.ammouse 1;
+	weapon.ammogive 2;
+	+WEAPON.NOAUTOFIRE;
+	+WEAPON.EXPLOSIVE;
+	}
+  
+	states
+	{
+	Ready:
+		RLXB A 0 A_ReplaceSprite("cotd_weapon_mode", "RLXH");
+		#### A 1 A_WeaponReady;
+		loop;
+	Deselect:
+		#### A 1 A_Lower(160);
+		loop;
+	Select:
+		RLXB A 0 A_ReplaceSprite("cotd_weapon_mode", "RLXh");
+		#### A 1 A_Raise(160);
+		loop;
+	Fire:
+		#### A 6;
+		#### B 0 A_GunFlash;
+		#### B 6 Bright A_FireProjectile ("RocketBlood");
+		#### C 6;
+		#### D 6;
+		#### A 24 A_ReFire;
+		goto Ready;
+	Flash:
+		TNT1 A 0 A_JumpIf(invoker.showFlash == false, "NoFlash");
+		MISF AB 1 bright A_Light(3);
+		MISF CD 1 bright A_Light2;
+		MISF EF 1 bright A_Light1;
+		MISF G 1 bright A_Light0;
+		stop;
+	NoFlash:
+		TNT1 AB 1 bright A_Light(3);
+		TNT1 CD 1 bright A_Light2;
+		TNT1 EF 1 bright A_Light1;
+		TNT1 G 1 bright A_Light0;
+		stop;
+	Spawn:
+		LAUN A -1;
+		stop;
+	Dummy:
+		RLXH ABCD 1;
+		Stop;
+	}
+}

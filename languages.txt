@@ -1,0 +1,7 @@
+[enu default]
+
+COTD_OPTIONS 				= "TCOTD Options";
+COTD_WEAPON 				= "VR Weapons";
+COTD_WEAPON_MODE 			= "Show hands";
+COTD_MUZZLE_FLASH 			= "Muzzle Flash";
+COTD_TRACER 				= "Bullet Tracers";

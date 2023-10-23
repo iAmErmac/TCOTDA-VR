@@ -1,0 +1,47 @@
+
+Class WeaponZ : Weapon
+{
+	action void A_ReplaceSprite(String myvar, String ssprite, bool pickup=false, float sscale=0.7)
+	{
+		int readsetting = CVar.FindCVar(myvar).GetInt();
+		int wsprite = GetSpriteIndex(ssprite);
+
+		if (readsetting && readsetting > 0 && wsprite != -1) {
+			
+			if(pickup)
+			{
+				invoker.sprite = wsprite;
+				invoker.A_SetScale(sscale);
+			}
+			else
+			{
+				if(player)
+				{
+					int mainhand = !invoker.bOffhandWeapon;
+					if(mainhand)
+						Player.GetPSprite(PSP_WEAPON).sprite = wsprite;
+					else
+						Player.GetPSprite(PSP_OFFHANDWEAPON).sprite = wsprite;
+				}
+			}
+		}
+	}
+	
+	override void Tick()
+	{
+		Super.Tick();
+		
+		playerinfo player = players[consoleplayer];
+		if(!player) return;
+		
+		//reading cvars once a sec should be good enough
+		if(GetAge() && GetAge() % 35 == 0)
+		{
+			showFlash = CVar.GetCvar("cotd_muzzle_flash", player).GetBool();
+			showTracer = CVar.GetCvar("cotd_bullet_tracer", player).GetBool();
+		}
+	}
+	
+	protected bool showFlash;
+	protected bool showTracer;
+}

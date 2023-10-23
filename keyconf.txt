@@ -1,0 +1,12 @@
+clearplayerclasses
+addplayerclass "TCOTDVRPlayer"
+
+weaponsection TSOTDA
+
+setslot 1 Fist2 OffhandFist Pitchfork2
+setslot 2 RevolverBlood2 RevolverBlood3
+setslot 3 Sawedoff2
+setslot 4 Thompson2
+setslot 5 NapalmLauncher2
+setslot 6
+setslot 7 

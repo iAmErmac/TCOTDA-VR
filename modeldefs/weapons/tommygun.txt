@@ -1,0 +1,84 @@
+
+Model Thompson2
+{ 
+	Path "models/weapons/tommygun"
+	Model 0 "tommygun.md3"
+	Skin 0 "tommygun.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+	
+	NOINTERPOLATION
+
+	//Ready
+	FrameIndex CHGG A 0 0
+}
+
+Model Thompson2
+{ 
+	Path "models/weapons/tommygun"
+	Model 0 "tommygun.md3"
+	Skin 0 "tommygun.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+	
+	//Attack
+	FrameIndex CHGG B 0 1
+	FrameIndex CHGG C 0 2
+}
+
+//Muzzle flash
+Model Thompson2
+{ 
+	Path "models/weapons/tommygun"
+	Model 0 "tommygun_mf.md3"
+	Skin 0 "tommy_mf1.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+
+	FrameIndex CHGF A 0 0
+	
+	Skin 0 "tommy_mf2.png"
+	
+	FrameIndex CHGF B 0 0
+	
+	Skin 0 "tommy_mf3.png"
+	
+	FrameIndex CHGF C 0 0
+	
+	Skin 0 "tommy_mf4.png"
+	
+	FrameIndex CHGF D 0 0
+	
+}
+
+//with hand
+Model Thompson2
+{ 
+	Path "models/weapons/tommygun"
+	Model 0 "tommygun.md3"
+	Skin 0 "tommygun.png"
+	Model 1 "tommygun_fist.md3"
+	Skin 1 "hand.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+	
+	NOINTERPOLATION
+
+	//Ready
+	FrameIndex CHGH A 0 0	FrameIndex CHGH A 1 0
+}
+
+Model Thompson2
+{ 
+	Path "models/weapons/tommygun"
+	Model 0 "tommygun.md3"
+	Skin 0 "tommygun.png"
+	Model 1 "tommygun_fist.md3"
+	Skin 1 "hand.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+
+	//Attack
+	FrameIndex CHGH B 0 1	FrameIndex CHGH B 0 1
+	FrameIndex CHGH C 0 2	FrameIndex CHGH C 0 2
+}

@@ -1,0 +1,8 @@
+
+#include "modeldefs/weapons/fist.txt"
+#include "modeldefs/weapons/pitchfork.txt"
+#include "modeldefs/weapons/pistol.txt"
+#include "modeldefs/weapons/shotgun.txt"
+#include "modeldefs/weapons/tommygun.txt"
+#include "modeldefs/weapons/napalm.txt"
+#include "modeldefs/decorations.txt"

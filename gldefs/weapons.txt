@@ -1,0 +1,191 @@
+
+material texture "models/weapons/fist/hand.png"
+{
+    normal "models/weapons/fist/hand_N.png" 
+    specular "models/weapons/fist/hand_S.png"
+    glossiness 10
+	specularlevel 5
+	
+	shader "shaders/SimSun.fp"
+}
+material texture "models/weapons/fist/letter_1.png"
+{
+    brightmap "models/weapons/fist/letter_bm.png"
+}
+material texture "models/weapons/fist/letter_2.png"
+{
+    brightmap "models/weapons/fist/letter_bm.png"
+}
+material texture "models/weapons/fist/letter_3.png"
+{
+    brightmap "models/weapons/fist/letter_bm.png"
+}
+material texture "models/weapons/fist/letter_4.png"
+{
+    brightmap "models/weapons/fist/letter_bm.png"
+}
+material texture "models/weapons/fist/letter_5.png"
+{
+    brightmap "models/weapons/fist/letter_bm.png"
+}
+material texture "models/weapons/fist/letter_6.png"
+{
+    brightmap "models/weapons/fist/letter_bm.png"
+}
+material texture "models/weapons/fist/letter_7.png"
+{
+    brightmap "models/weapons/fist/letter_bm.png"
+}
+material texture "models/weapons/fist/letter_8.png"
+{
+    brightmap "models/weapons/fist/letter_bm.png"
+}
+material texture "models/weapons/fist/letter_9.png"
+{
+    brightmap "models/weapons/fist/letter_bm.png"
+}
+material texture "models/weapons/fist/letter_10.png"
+{
+    brightmap "models/weapons/fist/letter_bm.png"
+}
+material texture "models/weapons/fist/letter_11.png"
+{
+    brightmap "models/weapons/fist/letter_bm.png"
+}
+material texture "models/weapons/fist/letter_12.png"
+{
+    brightmap "models/weapons/fist/letter_bm.png"
+}
+material texture "models/weapons/fist/letter_13.png"
+{
+    brightmap "models/weapons/fist/letter_bm.png"
+}
+material texture "models/weapons/fist/letter_14.png"
+{
+    brightmap "models/weapons/fist/letter_bm.png"
+}
+material texture "models/weapons/fist/letter_15.png"
+{
+    brightmap "models/weapons/fist/letter_bm.png"
+}
+material texture "models/weapons/fist/letter_16.png"
+{
+    brightmap "models/weapons/fist/letter_bm.png"
+}
+material texture "models/weapons/fist/blank.png"
+{
+	shader "shaders/SimSun.fp"
+}
+material texture "models/weapons/fist/letter_2_back.png"
+{
+	shader "shaders/SimSun.fp"
+}
+material texture "models/weapons/fist/letter_4_back.png"
+{
+	shader "shaders/SimSun.fp"
+}
+material texture "models/weapons/fist/book_cover.png"
+{
+	shader "shaders/SimSun.fp"
+}
+
+material texture "models/weapons/pitchfork/hand.png"
+{
+    normal "models/weapons/pitchfork/hand_N.png" 
+    specular "models/weapons/pitchfork/hand_S.png"
+    glossiness 10
+	specularlevel 5
+	
+	shader "shaders/SimSun.fp"
+}
+material texture "models/weapons/pitchfork/pitchfork.png"
+{
+	shader "shaders/SimSun.fp"
+}
+
+material texture "models/weapons/pistol/hand.png"
+{
+    normal "models/weapons/pistol/hand_N.png" 
+    specular "models/weapons/pistol/hand_S.png"
+    glossiness 10
+	specularlevel 5
+	
+	shader "shaders/SimSun.fp"
+}
+material texture "models/weapons/pistol/pistol.png"
+{
+    normal "models/weapons/pistol/pistol_N.png" 
+    specular "models/weapons/pistol/pistol_S.png"
+    glossiness 2
+	specularlevel 2
+	
+	//shader "shaders/SimSun.fp"
+}
+
+material texture "models/weapons/shotgun/hand.png"
+{
+    normal "models/weapons/shotgun/hand_N.png" 
+    specular "models/weapons/shotgun/hand_S.png"
+    glossiness 10
+	specularlevel 5
+	
+	shader "shaders/SimSun.fp"
+}
+material texture "models/weapons/shotgun/shotgun.png"
+{
+	shader "shaders/SimSun.fp"
+}
+
+material texture "models/weapons/tommygun/hand.png"
+{
+    normal "models/weapons/tommygun/hand_N.png" 
+    specular "models/weapons/tommygun/hand_S.png"
+    glossiness 10
+	specularlevel 5
+	
+	shader "shaders/SimSun.fp"
+}
+material texture "models/weapons/tommygun/tommygun.png"
+{
+	shader "shaders/SimSun.fp"
+}
+
+material texture "models/weapons/napalm/hand.png"
+{
+    normal "models/weapons/napalm/hand_N.png" 
+    specular "models/weapons/napalm/hand_S.png"
+    glossiness 10
+	specularlevel 5
+	
+	shader "shaders/SimSun.fp"
+}
+material texture "models/weapons/napalm/napalm0.png"
+{
+	brightmap "models/weapons/napalm/napalm_BM.png"
+	shader "shaders/SimSun.fp"
+}
+material texture "models/weapons/napalm/napalm1.png"
+{
+	brightmap "models/weapons/napalm/napalm_BM.png"
+	shader "shaders/SimSun.fp"
+}
+material texture "models/weapons/napalm/napalm2.png"
+{
+	brightmap "models/weapons/napalm/napalm_BM.png"
+	shader "shaders/SimSun.fp"
+}
+material texture "models/weapons/napalm/napalm3.png"
+{
+	brightmap "models/weapons/napalm/napalm_BM.png"
+	shader "shaders/SimSun.fp"
+}
+material texture "models/weapons/napalm/napalm4.png"
+{
+	brightmap "models/weapons/napalm/napalm_BM.png"
+	shader "shaders/SimSun.fp"
+}
+material texture "models/weapons/napalm/napalm5.png"
+{
+	brightmap "models/weapons/napalm/napalm_BM.png"
+	shader "shaders/SimSun.fp"
+}

@@ -1,0 +1,75 @@
+
+Model Pitchfork2
+{ 
+	Path "models/weapons/pitchfork"
+	Model 0 "pitchfork.md3"
+	Skin 0 "pitchfork.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+
+	//Ready
+	FrameIndex XUNG A 0 0
+	
+	//Attack
+	FrameIndex XUNG B 0 1
+	FrameIndex XUNG C 0 2
+	FrameIndex XUNG D 0 3
+	FrameIndex XUNG E 0 4
+	FrameIndex XUNG F 0 5
+	
+	//Throw
+	FrameIndex XUNG G 0 6
+	FrameIndex XUNG H 0 7
+}
+
+//With hand
+Model Pitchfork2
+{ 
+	Path "models/weapons/pitchfork"
+	Model 0 "pitchfork.md3"
+	Skin 0 "pitchfork.png"
+	Model 1 "pitchfork_fist.md3"
+	Skin 1 "hand.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+	
+	NOINTERPOLATION
+
+	//Ready
+	FrameIndex XNGH A 0 0	FrameIndex XNGH A 1 0
+}
+
+Model Pitchfork2
+{ 
+	Path "models/weapons/pitchfork"
+	Model 0 "pitchfork.md3"
+	Skin 0 "pitchfork.png"
+	Model 1 "pitchfork_fist.md3"
+	Skin 1 "hand.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+	
+	//Attack
+	FrameIndex XNGH B 0 1	FrameIndex XNGH B 1 1
+	FrameIndex XNGH C 0 2	FrameIndex XNGH C 1 2
+	FrameIndex XNGH D 0 3	FrameIndex XNGH D 1 3
+	FrameIndex XNGH E 0 4	FrameIndex XNGH E 1 4
+	FrameIndex XNGH F 0 5	FrameIndex XNGH F 1 5
+	
+	//Throw
+	FrameIndex XNGH G 0 6	FrameIndex XNGH G 1 6
+	FrameIndex XNGH H 0 7	FrameIndex XNGH H 1 7
+}
+
+Model Pitchfork_thrown
+{ 
+	Path "models/weapons/pitchfork"
+	Model 0 "pitchfork.md3"
+	Skin 0 "pitchfork.png"
+	Scale 0.45 0.45 0.45
+	Offset 10.0 0.0 0.0
+	
+	PITCHFROMMOMENTUM
+
+	FrameIndex XIPP A 0 0
+}

@@ -1,0 +1,7 @@
+
+Texture "models/weapons/napalm/napalm1.png"
+    pic "models/weapons/napalm/napalm1.png" tics 6
+    pic "models/weapons/napalm/napalm2.png" tics 6
+    pic "models/weapons/napalm/napalm3.png" tics 6
+    pic "models/weapons/napalm/napalm4.png" tics 6
+    pic "models/weapons/napalm/napalm5.png" tics 6

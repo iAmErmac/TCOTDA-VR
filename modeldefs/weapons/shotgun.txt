@@ -1,0 +1,189 @@
+
+Model Sawedoff2
+{ 
+	Path "models/weapons/shotgun"
+	Model 0 "shotgun.md3"
+	Skin 0 "shotgun.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+	
+	NOINTERPOLATION
+
+	//Ready
+	FrameIndex SHTG Z 0 0
+}
+
+Model Sawedoff2
+{ 
+	Path "models/weapons/shotgun"
+	Model 0 "shotgun.md3"
+	Skin 0 "shotgun.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+
+	//Fire left
+	FrameIndex SHTG A 0 1
+	FrameIndex SHTG B 0 2
+	FrameIndex SHTG C 0 3
+	FrameIndex SHTG D 0 4
+
+	//Fire right
+	FrameIndex SHTG E 0 5
+	FrameIndex SHTG F 0 6
+	FrameIndex SHTG G 0 7
+	FrameIndex SHTG H 0 8
+
+	//Fire both
+	FrameIndex SHTG I 0 9
+	FrameIndex SHTG J 0 10
+	FrameIndex SHTG K 0 11
+	FrameIndex SHTG L 0 12
+}
+
+Model Sawedoff2
+{ 
+	Path "models/weapons/shotgun"
+	Model 0 "shotgun.md3"
+	Skin 0 "shotgun.png"
+	Model 1 "shotgun_shells.md3"
+	Skin 1 "shotgun.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+
+	//Reload
+	FrameIndex SHTR A 0 13	FrameIndex SHTR A 1 13
+	FrameIndex SHTR B 0 14	FrameIndex SHTR B 1 14
+	FrameIndex SHTR C 0 15	FrameIndex SHTR C 1 15
+	
+	//Eject shells
+	FrameIndex SHTR D 0 16	FrameIndex SHTR D 1 16
+	FrameIndex SHTR E 0 17	FrameIndex SHTR E 1 17
+	FrameIndex SHTR F 0 18	FrameIndex SHTR F 1 18
+	
+	//Without shell
+	FrameIndex SHTR Z 0 18	FrameIndex SHTR Z 1 99
+	
+	//Inset shells
+	FrameIndex SHTR G 0 19	FrameIndex SHTR G 1 19
+	FrameIndex SHTR H 0 20	FrameIndex SHTR H 1 20
+	FrameIndex SHTR I 0 21	FrameIndex SHTR I 1 21
+	FrameIndex SHTR J 0 22	FrameIndex SHTR J 1 22
+	
+	//Finish reloading
+	FrameIndex SHTR K 0 23	FrameIndex SHTR K 1 23
+	FrameIndex SHTR L 0 24	FrameIndex SHTR L 1 24
+	FrameIndex SHTR M 0 25	FrameIndex SHTR M 1 25
+	FrameIndex SHTR N 0 26	FrameIndex SHTR N 1 26
+	FrameIndex SHTR O 0 27	FrameIndex SHTR O 1 27
+}
+
+//Muzzle flash
+Model Sawedoff2
+{ 
+	Path "models/weapons/shotgun"
+	Model 0 "shotgun_mf.md3"
+	Skin 0 "shotgun_mf1.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+
+	FrameIndex SHTF A 0 1
+	FrameIndex SHTF D 0 5
+	FrameIndex SHTF G 0 9
+	
+	Skin 0 "shotgun_mf2.png"
+	
+	FrameIndex SHTF B 0 1
+	FrameIndex SHTF E 0 5
+	FrameIndex SHTF H 0 9
+	
+	Skin 0 "shotgun_mf3.png"
+	
+	FrameIndex SHTF C 0 1
+	FrameIndex SHTF F 0 5
+	FrameIndex SHTF I 0 9
+}
+
+//with hand
+Model Sawedoff2
+{ 
+	Path "models/weapons/shotgun"
+	Model 0 "shotgun.md3"
+	Skin 0 "shotgun.png"
+	Model 1 "shotgun_fist.md3"
+	Skin 1 "hand.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+	
+	NOINTERPOLATION
+
+	//Ready
+	FrameIndex STGH Z 0 0	FrameIndex STGH Z 1 0
+}
+
+Model Sawedoff2
+{ 
+	Path "models/weapons/shotgun"
+	Model 0 "shotgun.md3"
+	Skin 0 "shotgun.png"
+	Model 1 "shotgun_fist.md3"
+	Skin 1 "hand.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+
+	//Fire left
+	FrameIndex STGH A 0 1	FrameIndex STGH A 1 1
+	FrameIndex STGH B 0 2	FrameIndex STGH B 1 2
+	FrameIndex STGH C 0 3	FrameIndex STGH C 1 3
+	FrameIndex STGH D 0 4	FrameIndex STGH D 1 4
+
+	//Fire right
+	FrameIndex STGH E 0 5	FrameIndex STGH E 1 5
+	FrameIndex STGH F 0 6	FrameIndex STGH F 1 6
+	FrameIndex STGH G 0 7	FrameIndex STGH G 1 7
+	FrameIndex STGH H 0 8	FrameIndex STGH H 1 8
+
+	//Fire both
+	FrameIndex STGH I 0 9	FrameIndex STGH I 1 9
+	FrameIndex STGH J 0 10	FrameIndex STGH J 1 10
+	FrameIndex STGH K 0 11	FrameIndex STGH K 1 11
+	FrameIndex STGH L 0 12	FrameIndex STGH L 1 12
+}
+
+Model Sawedoff2
+{ 
+	Path "models/weapons/shotgun"
+	Model 0 "shotgun.md3"
+	Skin 0 "shotgun.png"
+	Model 1 "shotgun_fist.md3"
+	Skin 1 "hand.png"
+	Model 2 "shotgun_shells.md3"
+	Skin 2 "shotgun.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+
+	//Reload
+	FrameIndex STRH A 0 13	FrameIndex STRH A 1 13	FrameIndex STRH A 2 13
+	FrameIndex STRH B 0 14	FrameIndex STRH B 1 14	FrameIndex STRH B 2 14
+	FrameIndex STRH C 0 15	FrameIndex STRH C 1 15	FrameIndex STRH C 2 15
+	
+	//Eject shells
+	FrameIndex STRH D 0 16	FrameIndex STRH D 1 16	FrameIndex STRH D 2 16
+	FrameIndex STRH E 0 17	FrameIndex STRH E 1 17	FrameIndex STRH E 2 17
+	FrameIndex STRH F 0 18	FrameIndex STRH F 1 18	FrameIndex STRH F 2 18
+	
+	//Without shell
+	FrameIndex STRH Z 0 18	FrameIndex STRH Z 1 18	FrameIndex STRH Z 2 99
+	
+	//Inset shells
+	FrameIndex STRH G 0 19	FrameIndex STRH G 1 19	FrameIndex STRH G 2 19
+	FrameIndex STRH H 0 20	FrameIndex STRH H 1 20	FrameIndex STRH H 2 20
+	FrameIndex STRH I 0 21	FrameIndex STRH I 1 21	FrameIndex STRH I 2 21
+	FrameIndex STRH J 0 22	FrameIndex STRH J 1 22	FrameIndex STRH J 2 22
+	
+	//Finish reloading
+	FrameIndex STRH K 0 23	FrameIndex STRH K 1 23	FrameIndex STRH K 2 23
+	FrameIndex STRH L 0 24	FrameIndex STRH L 1 24	FrameIndex STRH L 2 24
+	FrameIndex STRH M 0 25	FrameIndex STRH M 1 25	FrameIndex STRH M 2 25
+	FrameIndex STRH N 0 26	FrameIndex STRH N 1 26	FrameIndex STRH N 2 26
+	FrameIndex STRH O 0 27	FrameIndex STRH O 1 27	FrameIndex STRH O 2 27
+}

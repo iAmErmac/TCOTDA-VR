@@ -1,0 +1,3 @@
+user int cotd_weapon_mode = 1;
+user bool cotd_muzzle_flash = true;
+user bool cotd_bullet_tracer = true;

@@ -1,0 +1,12 @@
+version "3.5"
+
+#include "zscript/weapon_base.txt"
+#include "zscript/weapons/fist.txt"
+#include "zscript/weapons/pitchfork.txt"
+#include "zscript/weapons/pistol.txt"
+#include "zscript/weapons/shotgun.txt"
+#include "zscript/weapons/tommygun.txt"
+#include "zscript/weapons/napalm.txt"
+#include "zscript/player.txt"
+#include "zscript/decorations.txt"
+#include "zscript/replacements.txt"

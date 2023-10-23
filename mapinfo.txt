@@ -1,0 +1,20 @@
+
+Gameinfo
+{
+	AddEventHandlers = "TCOTD_ReplacementHandler","TCOTD_OffhandFistHandler"
+}
+
+DoomEdNums
+{
+	30876 = Pitchfork2
+	27010 = Sawedoff2
+	21073 = NapalmLauncher2
+	19999 = PistolBloodPickup2
+}
+
+SpawnNums
+{
+	33 = Sawedoff2
+	28 = Thompson2
+	29 = NapalmLauncher2
+}

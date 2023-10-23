@@ -1,0 +1,65 @@
+
+Class Pitchfork2 : WeaponZ //30876
+{
+	Default
+	{
+	obituary "%o was perforated by %k's pitchfork.";
+	weapon.selectionorder 3700;
+	weapon.kickback 100;
+	+WEAPON.WIMPY_WEAPON;
+	Scale 1.2;
+	Inventory.PickupSound "ITEMUP";
+	Inventory.PickupMessage "You picked up the Pitchfork";
+	}
+	
+	//custompunch is broken in QZD so we gonna make our own attack function
+	action void A_PitchforkAttack()
+	{
+		if(!invoker.owner) return;
+		
+		let pmo = invoker.owner.player.mo;
+		int hand = invoker.bOffhandWeapon;
+		double angle = pmo.angle;
+		double pitch = pmo.AimTarget() ? pmo.BulletSlope(null, ALF_PORTALRESTRICT) : pmo.pitch;
+		
+		pmo.LineAttack (angle, 96, pitch, random(4, 6), 'Melee', "HitPuff", LAF_NOIMPACTDECAL | LAF_NORANDOMPUFFZ | (hand ? LAF_ISOFFHAND : 0));
+	}
+	
+	states
+	{
+	Ready:
+		XUNG A 0 A_ReplaceSprite("cotd_weapon_mode", "XNGH");
+		#### A 1 A_WeaponReady;
+		loop;
+	Deselect:
+		#### A 1 A_Lower(160);
+		wait;
+		TNT1 A 1 A_Lower(160);
+		wait;
+	Select:
+		XUNG A 0 A_ReplaceSprite("cotd_weapon_mode", "XNGH");
+		#### A 1 A_Raise(160);
+		wait;
+	Fire:
+		#### BC 2;
+		#### D 0 A_PlaySound("DSSKESWG", CHAN_WEAPON);
+		//#### D 2 A_CustomPunch(4,0,0,"HitPuff",96);
+		#### D 2 A_PitchforkAttack();
+		#### EF 3;
+		#### A 9;
+		#### A 6 A_ReFire;
+		goto Ready;
+	AltFire:
+		#### GH 1;
+		#### H 0 A_PlaySound("DSSKESWG", CHAN_WEAPON);
+		#### H 0 A_FireProjectile("Pitchfork_thrown",0,1,0,5);
+		#### H 0 A_TakeInventory("Pitchfork2", 1);
+		Goto Deselect+1;
+	Spawn:
+		XFOR A -1;
+		Stop;
+	Dummy:
+		XNGH ABCDEFGH 1;
+		Stop;
+	}
+}

@@ -1,0 +1,46 @@
+Class TCOTD_ReplacementHandler : EventHandler
+{
+	override void WorldLoaded(WorldEvent event)
+	{
+		_isTitlemap = CheckTitlemap();
+	}
+	
+	override void CheckReplacement(ReplaceEvent e)
+	{
+		if(_isTitlemap) return;
+		
+		//if(e.Replacee is "Weapon") console.printf(""..e.Replacee.GetClassName());
+		if(e.Replacee is "Fist") 				e.Replacement = 'Fist2';
+		if(e.Replacee is "NewFist") 			e.Replacement = 'Fist2';
+		if(e.Replacee is "Pitchfork") 			e.Replacement = 'Pitchfork2';
+		if(e.Replacee is "Pistol") 				e.Replacement = 'RevolverBlood2';
+		if(e.Replacee is "PistolBloodPickup") 	e.Replacement = 'PistolBloodPickup2';
+		if(e.Replacee is "SawedOff") 			e.Replacement = 'SawedOff2';
+		if(e.Replacee is "SawedOff_") 			e.Replacement = 'SawedOff2';
+		if(e.Replacee is "Thompson") 			e.Replacement = 'Thompson2';
+		if(e.Replacee is "Thompson_") 			e.Replacement = 'Thompson2';
+		if(e.Replacee is "NapalmLauncher") 		e.Replacement = 'NapalmLauncher2';
+		if(e.Replacee is "NapalmLauncher_") 	e.Replacement = 'NapalmLauncher2';
+	}
+	
+	override void WorldTick()
+	{
+		if(_isTitlemap) return;
+		
+		playerinfo player = players[consoleplayer];
+		if(!player) return;
+		
+		if(player.mo.countinv("viewletter") > 0)
+		{
+			player.mo.A_SelectWeapon("OffhandFist");
+		}
+	}
+
+	private static bool CheckTitlemap()
+	{
+		bool isTitlemap = (level.mapname == "TITLEMAP");
+		return isTitlemap;
+	}
+	
+	private bool _isTitlemap;
+}

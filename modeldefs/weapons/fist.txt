@@ -1,0 +1,311 @@
+
+Model Fist2
+{ 
+	Path "models/weapons/fist"
+	Model 0 "fist.md3"
+	Skin 0 "hand.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+
+	//Ready
+	FrameIndex PUNG A 0 0
+	
+	//Attack
+	FrameIndex PUNG B 0 1
+	FrameIndex PUNG C 0 2
+	FrameIndex PUNG D 0 3
+	FrameIndex PUNG E 0 4
+	FrameIndex PUNG F 0 5
+}
+
+Model Fist2
+{ 
+	Path "models/weapons/fist"
+	Model 0 "fist.md3"
+	Skin 0 "hand.png"
+	Model 1 "letter_1.md3"
+	SurfaceSkin 1 0 "letter_15.png"
+	SurfaceSkin 1 1 "blank.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+	
+	//hold letter
+	FrameIndex PUNG G 0 6	FrameIndex PUNG G 1 0
+}
+
+Model OffhandFist
+{ 
+	Path "models/weapons/fist"
+	Model 0 "fist.md3"
+	Skin 0 "hand.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+
+	//Ready
+	FrameIndex PUNG A 0 0
+	
+	//Attack
+	FrameIndex PUNG B 0 1
+	FrameIndex PUNG C 0 2
+	FrameIndex PUNG D 0 3
+	FrameIndex PUNG E 0 4
+	FrameIndex PUNG F 0 5
+}
+
+//letter 1
+Model OffhandFist
+{ 
+	Path "models/weapons/fist"
+	Model 0 "fist.md3"
+	Skin 0 "hand.png"
+	Model 1 "letter_1_flipped.md3"
+	SurfaceSkin 1 0 "letter_1.png"
+	SurfaceSkin 1 1 "blank.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+	
+	//hold letter
+	FrameIndex LETR A 0 6	FrameIndex LETR A 1 0
+}
+
+//letter 2
+Model OffhandFist
+{ 
+	Path "models/weapons/fist"
+	Model 0 "fist.md3"
+	Skin 0 "hand.png"
+	Model 1 "note_1_flipped.md3"
+	SurfaceSkin 1 0 "letter_2.png"
+	SurfaceSkin 1 1 "letter_2_back.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+	
+	//hold letter
+	FrameIndex LETR B 0 6	FrameIndex LETR B 1 0
+}
+
+//letter 3
+Model OffhandFist
+{ 
+	Path "models/weapons/fist"
+	Model 0 "fist.md3"
+	Skin 0 "hand.png"
+	Model 1 "letter_2_flipped.md3"
+	SurfaceSkin 1 0 "letter_3.png"
+	SurfaceSkin 1 1 "blank.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+	
+	//hold letter
+	FrameIndex LETR C 0 6	FrameIndex LETR C 1 0
+}
+
+//letter 4
+Model OffhandFist
+{ 
+	Path "models/weapons/fist"
+	Model 0 "fist.md3"
+	Skin 0 "hand.png"
+	Model 1 "letter_1_flipped.md3"
+	SurfaceSkin 1 0 "letter_4.png"
+	SurfaceSkin 1 1 "letter_4_back.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+	
+	//hold letter
+	FrameIndex LETR D 0 6	FrameIndex LETR D 1 0
+}
+
+//letter 5
+Model OffhandFist
+{ 
+	Path "models/weapons/fist"
+	Model 0 "fist.md3"
+	Skin 0 "hand.png"
+	Model 1 "book_1_flipped.md3"
+	SurfaceSkin 1 0 "blank.png"
+	SurfaceSkin 1 1 "book_cover.jpg"
+	SurfaceSkin 1 2 "letter_5.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+	
+	//hold letter
+	FrameIndex LETR E 0 6	FrameIndex LETR E 1 0
+}
+
+//letter 6
+Model OffhandFist
+{ 
+	Path "models/weapons/fist"
+	Model 0 "fist.md3"
+	Skin 0 "hand.png"
+	Model 1 "book_1_flipped.md3"
+	SurfaceSkin 1 0 "blank.png"
+	SurfaceSkin 1 1 "book_cover.jpg"
+	SurfaceSkin 1 2 "letter_6.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+	
+	//hold letter
+	FrameIndex LETR F 0 6	FrameIndex LETR F 1 0
+}
+
+//letter 7
+Model OffhandFist
+{ 
+	Path "models/weapons/fist"
+	Model 0 "fist.md3"
+	Skin 0 "hand.png"
+	Model 1 "map_1_flipped.md3"
+	SurfaceSkin 1 0 "letter_7.png"
+	SurfaceSkin 1 1 "blank.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+	
+	//hold letter
+	FrameIndex LETR G 0 6	FrameIndex LETR G 1 0
+}
+
+//letter 8
+Model OffhandFist
+{ 
+	Path "models/weapons/fist"
+	Model 0 "fist.md3"
+	Skin 0 "hand.png"
+	Model 1 "letter_3_flipped.md3"
+	SurfaceSkin 1 0 "letter_8.png"
+	SurfaceSkin 1 1 "blank.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+	
+	//hold letter
+	FrameIndex LETR H 0 6	FrameIndex LETR H 1 0
+}
+
+//letter 9
+Model OffhandFist
+{ 
+	Path "models/weapons/fist"
+	Model 0 "fist.md3"
+	Skin 0 "hand.png"
+	Model 1 "letter_3_flipped.md3"
+	SurfaceSkin 1 0 "letter_9.png"
+	SurfaceSkin 1 1 "blank.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+	
+	//hold letter
+	FrameIndex LETR I 0 6	FrameIndex LETR I 1 0
+}
+
+//letter 10
+Model OffhandFist
+{ 
+	Path "models/weapons/fist"
+	Model 0 "fist.md3"
+	Skin 0 "hand.png"
+	Model 1 "letter_1_flipped.md3"
+	SurfaceSkin 1 0 "letter_10.png"
+	SurfaceSkin 1 1 "letter_4_back.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+	
+	//hold letter
+	FrameIndex LETR J 0 6	FrameIndex LETR J 1 0
+}
+
+//letter 11
+Model OffhandFist
+{ 
+	Path "models/weapons/fist"
+	Model 0 "fist.md3"
+	Skin 0 "hand.png"
+	Model 1 "letter_3_flipped.md3"
+	SurfaceSkin 1 0 "letter_11.png"
+	SurfaceSkin 1 1 "blank.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+	
+	//hold letter
+	FrameIndex LETR K 0 6	FrameIndex LETR K 1 0
+}
+
+//letter 12
+Model OffhandFist
+{ 
+	Path "models/weapons/fist"
+	Model 0 "fist.md3"
+	Skin 0 "hand.png"
+	Model 1 "note_1_flipped.md3"
+	SurfaceSkin 1 0 "letter_12.png"
+	SurfaceSkin 1 1 "blank.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+	
+	//hold letter
+	FrameIndex LETR L 0 6	FrameIndex LETR L 1 0
+}
+
+//letter 13
+Model OffhandFist
+{ 
+	Path "models/weapons/fist"
+	Model 0 "fist.md3"
+	Skin 0 "hand.png"
+	Model 1 "note_1_flipped.md3"
+	SurfaceSkin 1 0 "letter_13.png"
+	SurfaceSkin 1 1 "letter_2_back.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+	
+	//hold letter
+	FrameIndex LETR M 0 6	FrameIndex LETR M 1 0
+}
+
+//letter 14
+Model OffhandFist
+{ 
+	Path "models/weapons/fist"
+	Model 0 "fist.md3"
+	Skin 0 "hand.png"
+	Model 1 "letter_2_flipped.md3"
+	SurfaceSkin 1 0 "letter_14.png"
+	SurfaceSkin 1 1 "blank.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+	
+	//hold letter
+	FrameIndex LETR N 0 6	FrameIndex LETR N 1 0
+}
+
+//letter 15
+Model OffhandFist
+{ 
+	Path "models/weapons/fist"
+	Model 0 "fist.md3"
+	Skin 0 "hand.png"
+	Model 1 "letter_1_flipped.md3"
+	SurfaceSkin 1 0 "letter_15.png"
+	SurfaceSkin 1 1 "blank.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+	
+	//hold letter
+	FrameIndex LETR O 0 6	FrameIndex LETR O 1 0
+}
+
+//letter 16
+Model OffhandFist
+{ 
+	Path "models/weapons/fist"
+	Model 0 "fist.md3"
+	Skin 0 "hand.png"
+	Model 1 "note_1_flipped.md3"
+	SurfaceSkin 1 0 "letter_16.png"
+	SurfaceSkin 1 1 "blank.png"
+	Scale -0.7 0.7 0.7
+	Offset 3.0 -20 -7.0
+	
+	//hold letter
+	FrameIndex LETR P 0 6	FrameIndex LETR P 1 0
+}
