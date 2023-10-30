@@ -84,7 +84,7 @@ material texture "models/weapons/fist/letter_4_back.png"
 {
 	shader "shaders/SimSun.fp"
 }
-material texture "models/weapons/fist/book_cover.png"
+material texture "models/weapons/fist/book_cover.jpg"
 {
 	shader "shaders/SimSun.fp"
 }

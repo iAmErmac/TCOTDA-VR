@@ -6,7 +6,7 @@ The City of The Damned - Apocalypse is a 2011 PWAD made by Tormentor667 as a seq
 
 The mod takes place during 1920's. A cult known as Darkmoon decides to unleash a demon named Thamuz and hordes of other hellish creatures on a small city. A siren was installed to inform citizens about especially malicious monsters that come out when it sounds, and a shelter is only way to escape them.
 
-Original Non-VR version: https://www.realm667.com/index.php/en/projects-mainmenu-50/466-the-city-of-the-damned-apocalypse
+Non-VR (2013) version: https://www.realm667.com/index.php/en/projects-mainmenu-50/466-the-city-of-the-damned-apocalypse
 
 [![Download Now](https://raster.shields.io/github/downloads/iAmErmac/TCOTDA-VR/total)](https://github.com/iAmErmac/TCOTDA-VR/releases/latest)
 
@@ -15,6 +15,7 @@ Original Non-VR version: https://www.realm667.com/index.php/en/projects-mainmenu
 ## Features
 * VR weapons without/with hand models
 * Interactive way to read the letters and notes
+* Dual wielding pistols (for dual wield supported ports only)
 
 ## Installation
 
