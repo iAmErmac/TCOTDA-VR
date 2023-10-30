@@ -17,11 +17,7 @@ Class WeaponZ : Weapon
 			{
 				if(player)
 				{
-					int mainhand = !invoker.bOffhandWeapon;
-					if(mainhand)
-						Player.GetPSprite(PSP_WEAPON).sprite = wsprite;
-					else
-						Player.GetPSprite(PSP_OFFHANDWEAPON).sprite = wsprite;
+					Player.GetPSprite(PSP_WEAPON).sprite = wsprite;
 				}
 			}
 		}

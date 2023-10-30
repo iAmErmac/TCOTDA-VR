@@ -1,7 +1,7 @@
 
 Gameinfo
 {
-	AddEventHandlers = "TCOTD_ReplacementHandler","TCOTD_OffhandFistHandler"
+	AddEventHandlers = "TCOTD_ReplacementHandler"
 }
 
 DoomEdNums

@@ -13,7 +13,6 @@ Class TCOTDVRPlayer : PlayerPawn
 	Player.DisplayName "TCOTDPlayer";
 	Player.CrouchSprite "PLYC";
 	Player.StartItem "Fist2";
-	Player.StartItem "OffhandFist";
 	}
 	
 	states

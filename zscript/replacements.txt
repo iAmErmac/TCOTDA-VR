@@ -32,7 +32,7 @@ Class TCOTD_ReplacementHandler : EventHandler
 		
 		if(player.mo.countinv("viewletter") > 0)
 		{
-			player.mo.A_SelectWeapon("OffhandFist");
+			player.mo.A_SelectWeapon("Fist2");
 		}
 	}
 
